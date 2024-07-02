@@ -2,13 +2,53 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
+abstract class ListItem {
+
+  Widget buildTitle (BuildContext context);
+  Widget buildSubTitle(BuildContext context);
+}
+
+class HeadingItem implements ListItem {
+
+  final String heading;
+
+  HeadingItem(this.heading);
+  
+  @override
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headlineSmall,
+    );
+  }
+  
+  @override
+  Widget buildSubTitle(BuildContext context) => const SizedBox.shrink();
+  
+  
+  
+  
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     const title = 'Basic List';
-
     return MaterialApp(
       title: title,
       home: Scaffold(
@@ -81,10 +121,7 @@ Expanded(
   ),
 ),
              ],
-           ),
-         
-            
-        
+           ),  
       ),
     );
   }
