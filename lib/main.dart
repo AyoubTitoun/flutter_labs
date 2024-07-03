@@ -122,7 +122,7 @@ class FinalProduct extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
+    home: Scaffold(  
       appBar: AppBar(title: Center(child: Text("First Flutter Layout")),),
       body:  SingleChildScrollView(child: Center(
         child: FinalProduct(),
