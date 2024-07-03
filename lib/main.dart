@@ -128,18 +128,16 @@ class RowButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Padding(
-      padding: const EdgeInsets.all(35.0),
-      child: ( Row( 
+      padding: const EdgeInsets.only(right:20,left: 20,bottom: 15),
+      child:  Row( 
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
                IconCombined(title:'CALL', icontitle: Icon(Icons.call,color: Colors.purple,)),
               IconCombined(title:'ROUTE', icontitle: Icon(Icons.near_me,color: Colors.purple,)),
               IconCombined(title:'SHARE', icontitle: Icon(Icons.share,color: Colors.purple,))
-      ]
+      ]       
       
-              
-      
-      )),
+      ),
     );
    
   }
@@ -164,6 +162,10 @@ class FinalProduct extends StatelessWidget {
            Container(
             padding: EdgeInsets.only(left: 20, right: 20),
             child: Text('Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures  and pine forest, leads you to the lake, which warms to 20  degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.'))
+    ,SizedBox(height: 10,),
+    TextFields(),
+    
+    
     ],)
       
       
@@ -173,6 +175,45 @@ class FinalProduct extends StatelessWidget {
 
  
 
+class TextFields extends StatelessWidget {
+const TextFields ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   return (Row( 
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+    Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: SizedBox(
+            width: 200,
+            child: TextField(
+            
+              decoration: InputDecoration(
+                
+                border: OutlineInputBorder(),
+                hintText: 'Enter a search term',
+              ),
+            ),
+          ),
+        ),
+         Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: SizedBox(
+            width: 200,
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Enter your username',
+              ),
+            ),
+          ),
+        ),
+],
+  ));
+  }
+}
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
